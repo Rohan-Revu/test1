@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Pattern Demo - Educational</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #fafbfb;}
+        .container { max-width: 480px; margin: 40px auto; background: #fff; border: 1px solid #eee; box-shadow: 0 2px 8px #eee;}
+        h1, h2 { letter-spacing: 1px; }
+        .notice { background: #ffe4b2; color: #855000; padding: 10px; font-size: 14px; }
+        .form-group { margin-bottom: 18px; }
+        .hidden { display: none; }
+        .fineprint { color: #999; font-size: 11px; }
+        .confirmshame { color: #a13217; font-size: 13px; margin:12px 0;}
+        .misleading { color: #444; background: #f8f8f8; padding: 5px; border-radius: 3px;}
+        #unsubscribe { color: #d5d5d5; font-size:12px; margin-left:8px;}
+        .danger { color: #b40000; }
+        button, input[type=submit] { border:none; background:#4444cc; color:#fff; padding:8px 15px; border-radius:5px; font-size:15px; cursor:pointer;}
+        button:hover, input[type=submit]:hover { background: #2222aa; }
+        a { color: #4444cc; text-decoration: none; }
+        .hidden-field { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="notice">
+            <b>Educational Demo:</b> This site showcases <i>dark patterns</i> for awareness only.<br>
+            No real data is collected or processed. <br>
+            <b>Do not enter personal information.</b>
+        </div>
+        <h1>Subscribe for Premium Access</h1>
+        <form autocomplete="off" onsubmit="alert('Thank you! (Demo only)'); return false;">
+            <div class="form-group">
+                <label>Email address<br>
+                    <input type="email" required placeholder="your@email.com">
+                </label>
+            </div>
+            <div class="fineprint misdirection form-group" style="margin-bottom:10px;">
+                Save 80% - exclusive offer!
+            </div>
+            <div class="form-group">
+                <!-- Hidden field: auto-renewal enabled by default -->
+                <label class="hidden-field">
+                    <input type="checkbox" name="auto_renew" checked>
+                    Auto-renew monthly (Hidden choice)
+                </label>
+                <!-- The visible checkbox is just a marketing subscription! -->
+                <label>
+                    <input type="checkbox" name="email_promo" checked>
+                    Send me promotional emails
+                </label>
+            </div>
+            <div class="fineprint">
+                By continuing, you agree to our 
+                <a href="#">T&amp;C</a> 
+                and <a href="#">Privacy Policy</a>.
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Start Free Trial (Demo)">
+            </div>
+            <div class="fineprint danger">
+                <span class="misleading">Your card will be charged ₹ 199/month after the 3-day trial.</span>
+                <br>Unsubscribe option may not be directly visible.
+            </div>
+        </form>
+
+        <h2 style="margin-top:35px;">Cancel Subscription</h2>
+        <div class="confirmshame">
+            Are you <b>sure</b> you want to lose all your benefits? <br>
+            <button onclick="alert('We kept your subscription active! (Demo)');">No, keep my perks</button>
+            <a id="unsubscribe" href="#">Cancel anyway</a>
+        </div>
+        <div class="fineprint" style="margin-top:25px;">
+            © 2025 Dark Pattern Demo. For <b>educational awareness</b> only.
+        </div>
+    </div>
+</body>
+</html>
